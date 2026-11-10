@@ -1,0 +1,64 @@
+name: Bug report
+description: Something in the provider does not work as documented.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please **remove any API key, IP address or other
+        secret** from what you paste below. Account, billing or platform questions are answered faster
+        through a ticket from the OnetSolutions console.
+  - type: input
+    id: provider-version
+    attributes:
+      label: Provider version
+      description: The `onetsolutions-net/onetsolutions` version, from `terraform version` or `tofu version`.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: cli-version
+    attributes:
+      label: Terraform or OpenTofu version
+      placeholder: "Terraform 1.9.8 / OpenTofu 1.8.5"
+    validations:
+      required: true
+  - type: input
+    id: resources
+    attributes:
+      label: Affected resources or data sources
+      placeholder: "onetsolutions_instance, onetsolutions_dns_record"
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Configuration
+      description: The smallest configuration that reproduces the problem.
+      render: terraform
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: What happened instead, with the full error message.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. terraform apply
+        2. …
+  - type: textarea
+    id: logs
+    attributes:
+      label: Debug output
+      description: Optional. Run with `TF_LOG=DEBUG` and paste the relevant part (secrets removed).
+      render: shell

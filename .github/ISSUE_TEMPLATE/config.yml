@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Account, billing or platform support
+    url: https://console.onetsolutions.net
+    about: Open a ticket from the OnetSolutions console for anything that is not a provider bug.
+  - name: Report a security vulnerability
+    url: https://github.com/onetsolutions-net/terraform-provider-onetsolutions/security/advisories/new
+    about: Please report security problems privately, never in a public issue.
+  - name: Provider documentation
+    url: https://registry.terraform.io/providers/onetsolutions-net/onetsolutions/latest/docs
+    about: Every resource and data source, with examples and import instructions.

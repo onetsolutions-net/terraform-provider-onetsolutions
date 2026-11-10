@@ -1,0 +1,2248 @@
+{
+  "count": 14,
+  "next": null,
+  "previous": null,
+  "page": 1,
+  "page_size": 100,
+  "total_pages": 1,
+  "results": [
+    {
+      "id": "dd9bd536-5351-4059-abcb-1bf2af816566",
+      "name": "P-4",
+      "slug": "p-4",
+      "cpu_model": "epyc-7443",
+      "vcpu": 1,
+      "ram_mb": 4096,
+      "bandwidth_mbps": 3000,
+      "is_active": true,
+      "description": "* **4096** Mo RAM\n* **1** vCPUS\n* **80 Go** SSD / **40 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "4f6b19a1-227e-4fa9-a872-5d0809ded88a",
+          "volume_type": "nvme",
+          "disk_gb": 40,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "084b67ef-b1f1-45e9-b2b8-82acbcb3ece4",
+          "volume_type": "ssd",
+          "disk_gb": 80,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "531fb143-a8c1-4462-aaf6-1809de5dc5b1",
+          "billing_cycle": "annually",
+          "price": "76.70",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "7aed30ee-a5aa-4673-83d1-f1c0c19a299d",
+          "billing_cycle": "biennially",
+          "price": "134.23",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "7509fff6-8312-4a8f-b799-8bb8cfb8509c",
+          "billing_cycle": "monthly",
+          "price": "7.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "ac4db5b0-4cbd-4859-b6f7-faf314b55681",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "154b494d-8d1c-4da5-b467-384568cccb0d",
+              "billing_cycle": "annually",
+              "price": "19.10",
+              "is_active": true
+            },
+            {
+              "id": "2e8c10e6-e4ce-44f5-b0d8-498f69b26a48",
+              "billing_cycle": "biennially",
+              "price": "33.43",
+              "is_active": true
+            },
+            {
+              "id": "ba1a582e-99e0-4bda-8715-28700a98a4d9",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "901637f0-967d-46f6-953b-9cf2be6d0c6b",
+              "billing_cycle": "monthly",
+              "price": "1.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "6dff9fea-cfc2-4c66-8496-74ed6752a88c",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "d51a351d-4506-4fd4-bd31-eb9c159cf059",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "51e1a469-e358-47fb-8521-88058164f633",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "ad667cf6-c215-4b77-bac0-127a8cb0c306",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "03c46e03-24f6-46bf-888d-8c6cc86958f1",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        }
+      ],
+      "created": "2026-05-30T13:31:03.996824Z",
+      "modified": "2026-10-05T15:09:30.908597Z"
+    },
+    {
+      "id": "309a1e71-cf55-4e9d-babe-d810b855c56b",
+      "name": "GP-2",
+      "slug": "gp-2-253",
+      "cpu_model": "e5-2680-v4",
+      "vcpu": 2,
+      "ram_mb": 2048,
+      "bandwidth_mbps": 150,
+      "is_active": true,
+      "description": "* **2048** Mo RAM\n* **2** vCPUS\n* **40 Go** SSD / **20 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "511cfab8-c2e4-4b29-a03c-c0428bd6070a",
+          "volume_type": "nvme",
+          "disk_gb": 20,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "918b2827-8eb6-4fe0-9b6f-a874540dd535",
+          "volume_type": "ssd",
+          "disk_gb": 40,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "35e65103-406b-4f00-b7fc-a6b153f40bf7",
+          "billing_cycle": "annually",
+          "price": "38.30",
+          "discount_percent": "20.01",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "38c4eb75-12da-4b73-bcd7-646b044367fe",
+          "billing_cycle": "biennially",
+          "price": "67.03",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "98adcf76-5d9f-4f2b-9744-62a5555b8f17",
+          "billing_cycle": "monthly",
+          "price": "3.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "62f356bb-9c6b-422d-af77-1c91a6345aa6",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "89641546-6980-4406-b6fb-5a6f436daea4",
+              "billing_cycle": "annually",
+              "price": "9.50",
+              "is_active": true
+            },
+            {
+              "id": "39e50555-7bf8-47c5-90e7-2224b74d2d7c",
+              "billing_cycle": "biennially",
+              "price": "16.63",
+              "is_active": true
+            },
+            {
+              "id": "9c80a664-3b04-4a8c-840d-b2fccf63a479",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "dae3eb9b-f02e-4cd8-9099-80676ec5b15d",
+              "billing_cycle": "monthly",
+              "price": "0.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "15554ab7-0922-461e-a813-7986ae978364",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "d2a193db-8946-444f-9930-2a2fecc4d466",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "2a75f199-b053-4b40-833e-2d55387eefba",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "1f0567a6-a2b3-4b91-bf7c-4575417f0642",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "69fa4677-9447-4475-8231-5cc5710efc1e",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        }
+      ],
+      "created": "2026-05-30T13:31:04.062086Z",
+      "modified": "2026-10-05T15:09:31.024275Z"
+    },
+    {
+      "id": "73e5f336-8b34-4683-b818-392bea6bd141",
+      "name": "GP-4",
+      "slug": "gp-4-254",
+      "cpu_model": "e5-2680-v4",
+      "vcpu": 2,
+      "ram_mb": 4096,
+      "bandwidth_mbps": 200,
+      "is_active": true,
+      "description": "* **4096** Mo RAM\n* **2** vCPUS\n* **80 Go** SSD / **40 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "fc00cee3-2696-4ddb-b4ba-a2676146183a",
+          "volume_type": "nvme",
+          "disk_gb": 40,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "4058acb1-c1a5-4212-b2fa-f590c9a782c5",
+          "volume_type": "ssd",
+          "disk_gb": 80,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "37ea2a99-cd2d-4a8c-b3dc-5de2ceb7e4d6",
+          "billing_cycle": "annually",
+          "price": "76.70",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "1c633236-ce63-4c2d-9d02-98096099a015",
+          "billing_cycle": "biennially",
+          "price": "134.23",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "48eae488-0f2b-438e-994c-555b0cb69696",
+          "billing_cycle": "monthly",
+          "price": "7.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "fb7a14db-112b-4883-832e-899c78e0163c",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "ee24e036-9034-400e-aba3-926c0e51e000",
+              "billing_cycle": "annually",
+              "price": "19.10",
+              "is_active": true
+            },
+            {
+              "id": "54c232f4-d6b1-40b1-854b-cd6a03824992",
+              "billing_cycle": "biennially",
+              "price": "33.43",
+              "is_active": true
+            },
+            {
+              "id": "7d9678aa-bbcf-45b9-9641-d3f8ea16cb53",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "eb5def09-9c4c-4465-9f3e-68bafb6fecae",
+              "billing_cycle": "monthly",
+              "price": "1.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "4a29b26b-9178-40d2-8b32-5df72905ff77",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "af249d45-41b1-4f9a-a274-3f82b63871bf",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "2f6fa316-2362-4b01-8f8a-69cf5cc20378",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "22a678e7-93ec-4ce7-9dbb-a0e7728d4165",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "2706d448-c348-428e-889c-375ecdb630a3",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        },
+        {
+          "id": "a83e90ee-a252-4949-91d2-5db2bff75fb7",
+          "addon": {
+            "id": "e95dc3ef-3381-40f2-850b-ad6e733ed986",
+            "slug": "windows-server-licence",
+            "name": "Windows Server Licence",
+            "name_fr": "Licence Windows Server",
+            "name_de": "Windows-Server-Lizenz",
+            "description": "Windows Server Standard licence for VPS",
+            "description_fr": "Licence Windows Server Standard pour VPS",
+            "description_de": "Windows Server Standard-Lizenz für VPS",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "80958c07-e00e-4e84-aa7f-8c171bc86639",
+              "billing_cycle": "annually",
+              "price": "69.60",
+              "is_active": true
+            },
+            {
+              "id": "5804f7d2-48c8-4612-9766-1a29bb7a7c6e",
+              "billing_cycle": "biennially",
+              "price": "139.20",
+              "is_active": true
+            },
+            {
+              "id": "891fe0a1-c861-4d63-ae68-941ffed68c40",
+              "billing_cycle": "hourly",
+              "price": "0.01",
+              "is_active": true
+            },
+            {
+              "id": "5dfd4875-da29-4fea-8aa1-72d98f61ed44",
+              "billing_cycle": "monthly",
+              "price": "5.80",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        }
+      ],
+      "created": "2026-05-30T13:31:04.078926Z",
+      "modified": "2026-10-05T15:09:31.053807Z"
+    },
+    {
+      "id": "0b5706eb-a0cf-4f45-abe9-3c6612ff9423",
+      "name": "HP-4",
+      "slug": "hp-4-245",
+      "cpu_model": "epyc-9554",
+      "vcpu": 2,
+      "ram_mb": 4096,
+      "bandwidth_mbps": 3000,
+      "is_active": true,
+      "description": "* **4096** Mo RAM\n* **2** vCPUS\n* **80 Go** SSD / **40 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "e0b291f1-939e-4607-b359-5991edfffde4",
+          "volume_type": "nvme",
+          "disk_gb": 40,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "ad48b0d8-eedb-40c0-bfee-a796fa07bb6b",
+          "volume_type": "ssd",
+          "disk_gb": 80,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "1ebf6e74-c210-46e4-9d4a-72c368b753a7",
+          "billing_cycle": "annually",
+          "price": "76.70",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "805a5a13-20ca-490e-a008-4d831e495766",
+          "billing_cycle": "biennially",
+          "price": "134.23",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "fddcc0c7-e479-41d5-831a-b707628e83fe",
+          "billing_cycle": "monthly",
+          "price": "7.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "b1af065a-fcca-4092-a806-11244d72384e",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "cb437f8f-b5ac-40b2-87fc-c5ac1d3b51e5",
+              "billing_cycle": "annually",
+              "price": "19.10",
+              "is_active": true
+            },
+            {
+              "id": "769d0aba-8f6f-4103-b249-aa5f913040ed",
+              "billing_cycle": "biennially",
+              "price": "33.43",
+              "is_active": true
+            },
+            {
+              "id": "634570b7-2609-4d1c-98a6-79dec7eab34c",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "e726505f-e35e-4b83-8a31-3a056df70d9c",
+              "billing_cycle": "monthly",
+              "price": "1.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "b8e6d342-708f-4c87-bf7d-eabcafba3316",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "e3a9b39f-c605-441c-be2b-0b1ddb39edea",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "7c9bfcf2-7b3d-4d39-b9dd-3c506065b78b",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "fdcf94ca-ee31-459c-bbe0-e4ab51659607",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "88409db6-2717-440d-8a52-b93a88a72f43",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        }
+      ],
+      "created": "2026-05-30T13:31:03.931411Z",
+      "modified": "2026-10-05T15:09:30.802091Z"
+    },
+    {
+      "id": "72838c42-ea6c-436a-b9d6-17db0c114a42",
+      "name": "P-8",
+      "slug": "p-8",
+      "cpu_model": "epyc-7443",
+      "vcpu": 2,
+      "ram_mb": 8192,
+      "bandwidth_mbps": 3000,
+      "is_active": true,
+      "description": "* **8192** Mo RAM\n* **2** vCPUS\n* **160 Go** SSD / **80 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "388e35d5-a91f-476a-8ce6-74b0a1bb5625",
+          "volume_type": "nvme",
+          "disk_gb": 80,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "ddc9d1f9-46a3-4504-bda9-52b8a09bd3fb",
+          "volume_type": "ssd",
+          "disk_gb": 160,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "1a180172-15e7-4bf2-affe-97ef3744add1",
+          "billing_cycle": "annually",
+          "price": "153.50",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "9b73f87b-24d3-4aa3-8e58-92416cd69570",
+          "billing_cycle": "biennially",
+          "price": "268.63",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "467a4f07-e2fa-40e9-81f6-f0433187714b",
+          "billing_cycle": "monthly",
+          "price": "15.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "04aa9888-5478-4a8d-8cbe-947f9bc3f7ea",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "cc426e85-d60b-4b73-88a9-333c6f191d42",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "1a9d64bd-04c2-4a39-a7bb-bc27193f7f61",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "22cb8cc6-0b72-4e27-9b2a-85eacbc9a12a",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "f0b3f244-6e7a-462c-b403-a603580ff872",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "83556baa-6533-4dd1-a07b-631db86e7e9c",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "c674a786-dd4f-463c-8e40-e26728746117",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "7e447c58-4909-4db8-8a13-7d3d6dfed7c4",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "00fab6d1-33bd-4e3a-9333-9e6dbc695ee9",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "70385e3a-ebc6-4ccd-85f4-4092eed72b27",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        }
+      ],
+      "created": "2026-05-30T13:31:04.013435Z",
+      "modified": "2026-10-05T15:09:30.932027Z"
+    },
+    {
+      "id": "90569b7f-6a63-408b-8026-701f75624cb8",
+      "name": "HP-8",
+      "slug": "hp-8-244",
+      "cpu_model": "epyc-9554",
+      "vcpu": 4,
+      "ram_mb": 8192,
+      "bandwidth_mbps": 3000,
+      "is_active": true,
+      "description": "* **8192** Mo RAM\n* **4** vCPUS\n* **160 Go** SSD / **80 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "ab4635fa-936a-4c8a-999a-512e9b72071d",
+          "volume_type": "nvme",
+          "disk_gb": 80,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "436005c1-0cc1-4ec5-b6ab-af11034b458d",
+          "volume_type": "ssd",
+          "disk_gb": 160,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "951b9527-1c88-4c30-aed3-85b0aa2172bf",
+          "billing_cycle": "annually",
+          "price": "153.50",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "f523221e-7c76-4bc7-a676-a2dafc0967e3",
+          "billing_cycle": "biennially",
+          "price": "268.63",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "7741ca59-10e0-4cfb-975e-c2b58b6f167f",
+          "billing_cycle": "monthly",
+          "price": "15.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "602cde1c-3db4-44f3-9fae-195ad4e12278",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "44b592c9-5916-45e1-87ba-7e6e07bce264",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "ee09b43d-8801-4a0f-bf34-d7dbc5e07c70",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "accf5da0-0828-4fb3-be56-cacd7f137099",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "47439a3e-7855-4d9b-8fdb-26f396c32643",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "436c1206-5ab4-4be5-801c-8cf75793a39e",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "2ff94877-5a68-494a-bd8d-4f1608d80b9f",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "836218f6-a947-418c-b1c9-f782138909d1",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "8d2fb2b9-ba11-48e9-9e9b-ad575b22c540",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "5d0a7a06-168a-44b1-8c65-bae9d13973b4",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        }
+      ],
+      "created": "2026-05-30T13:31:03.912975Z",
+      "modified": "2026-10-05T15:09:30.777156Z"
+    },
+    {
+      "id": "389ef325-aa0f-4765-864f-71461b5c0e3f",
+      "name": "GP-8",
+      "slug": "gp-8-255",
+      "cpu_model": "e5-2680-v4",
+      "vcpu": 4,
+      "ram_mb": 8192,
+      "bandwidth_mbps": 250,
+      "is_active": true,
+      "description": "* **8192** Mo RAM\n* **4** vCPUS\n* **160 Go** SSD / **80 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "87bb9687-b1df-480a-9817-ce378cb085ed",
+          "volume_type": "nvme",
+          "disk_gb": 80,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "05a49244-941b-43f4-8fdb-25993d8b9828",
+          "volume_type": "ssd",
+          "disk_gb": 160,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "0342ade1-6a40-4915-8ea7-f929d0ebe721",
+          "billing_cycle": "annually",
+          "price": "153.50",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "db4511c2-045b-4c80-a2e9-76c0fbf05bc0",
+          "billing_cycle": "biennially",
+          "price": "268.63",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "1ee7f1e1-ac7e-4317-b812-2476dd1c2f8b",
+          "billing_cycle": "monthly",
+          "price": "15.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "d0a0a70d-92fa-47e5-8554-5bef19502aa4",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "34439d8a-5ab7-4a82-8812-6532ecf0a125",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "21a8ca48-9d2b-47eb-819d-16efaa3bd07a",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "e65d258c-c2a1-4afa-98cb-7e62c13ae806",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "26d2d2fe-a2c6-4c5a-9d3c-dd93fdfaf8a1",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "7cd511eb-0023-497d-b12c-221d77ceaf0b",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "cd0f00b9-2ded-44df-b4fa-8182464c9fa4",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "ec3d4782-f1fb-4ce8-a25d-077c2ebe6b1e",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "3258d9af-249d-46a6-b785-e7427172f304",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "4fe2817f-c4e9-4486-ad5e-6e31f3a2e184",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        },
+        {
+          "id": "25f98936-eb0c-4824-ab50-9e03ed81c613",
+          "addon": {
+            "id": "e95dc3ef-3381-40f2-850b-ad6e733ed986",
+            "slug": "windows-server-licence",
+            "name": "Windows Server Licence",
+            "name_fr": "Licence Windows Server",
+            "name_de": "Windows-Server-Lizenz",
+            "description": "Windows Server Standard licence for VPS",
+            "description_fr": "Licence Windows Server Standard pour VPS",
+            "description_de": "Windows Server Standard-Lizenz für VPS",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "6f05b6c6-b3cd-4648-9686-ba76508363a4",
+              "billing_cycle": "annually",
+              "price": "110.40",
+              "is_active": true
+            },
+            {
+              "id": "ab7067c0-cb74-472f-ae0f-7cd1796714b9",
+              "billing_cycle": "biennially",
+              "price": "220.80",
+              "is_active": true
+            },
+            {
+              "id": "51185349-65fd-4d14-80c1-f55918835619",
+              "billing_cycle": "hourly",
+              "price": "0.01",
+              "is_active": true
+            },
+            {
+              "id": "425cca78-ec43-41af-8796-959d0cfc48e7",
+              "billing_cycle": "monthly",
+              "price": "9.20",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        }
+      ],
+      "created": "2026-05-30T13:31:04.095340Z",
+      "modified": "2026-10-05T15:09:31.081659Z"
+    },
+    {
+      "id": "025b002a-fab9-4772-b612-2f9a595ca785",
+      "name": "P-16",
+      "slug": "p-16",
+      "cpu_model": "epyc-7443",
+      "vcpu": 4,
+      "ram_mb": 16384,
+      "bandwidth_mbps": 3000,
+      "is_active": true,
+      "description": "* **16384** Mo RAM\n* **4** vCPUS\n* **320 Go** SSD / **160 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "888108ad-ba8e-459e-8418-bd2d3db4e961",
+          "volume_type": "nvme",
+          "disk_gb": 160,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "225e64e1-f80a-4f7d-a94f-a7d6c0cf1a38",
+          "volume_type": "ssd",
+          "disk_gb": 320,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "0a1c9303-4e39-4870-9943-1c04bcfd764e",
+          "billing_cycle": "annually",
+          "price": "284.06",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "4612adf2-79d9-41f7-8285-54b5ba1372d4",
+          "billing_cycle": "biennially",
+          "price": "497.11",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "d185e19a-014c-4d6c-acd1-cb73e145f703",
+          "billing_cycle": "monthly",
+          "price": "29.59",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "de6bfe99-3b73-49c2-81ed-104e48453d30",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "051ff083-500b-4943-bed4-fef7d981e1f9",
+              "billing_cycle": "annually",
+              "price": "57.50",
+              "is_active": true
+            },
+            {
+              "id": "8b8811f9-5876-4f30-a84b-c34d09c71a69",
+              "billing_cycle": "biennially",
+              "price": "100.63",
+              "is_active": true
+            },
+            {
+              "id": "1563ef5a-0920-4518-adc3-ebec28b26fe3",
+              "billing_cycle": "hourly",
+              "price": "0.01",
+              "is_active": true
+            },
+            {
+              "id": "04fab4ff-e595-40f2-b749-0ce61637134c",
+              "billing_cycle": "monthly",
+              "price": "5.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "b7c80fbc-8b15-4d22-ac63-1b06608f3b92",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "222b4418-84fe-4998-beff-1d8de1a3a763",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "af1e4740-bdaa-46c3-ace5-7a5706ca887a",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "65482188-8908-4a30-885b-a0252e27d8fa",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "d084a94e-6dca-4842-b542-cb388895ee15",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        }
+      ],
+      "created": "2026-05-30T13:31:04.029247Z",
+      "modified": "2026-10-05T15:09:30.960634Z"
+    },
+    {
+      "id": "cd3ac426-e587-4297-a3ca-8b501b0e1213",
+      "name": "HP-16",
+      "slug": "hp-16-246",
+      "cpu_model": "epyc-9554",
+      "vcpu": 8,
+      "ram_mb": 16384,
+      "bandwidth_mbps": 3000,
+      "is_active": true,
+      "description": "* **16384** Mo RAM\n* **8** vCPUS\n* **320 Go** SSD / **160 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "26096b12-4e40-4757-b4f5-b75bc2ffefa6",
+          "volume_type": "nvme",
+          "disk_gb": 160,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "76d8e3b5-c072-4b75-9c45-39b5a77a3a11",
+          "volume_type": "ssd",
+          "disk_gb": 320,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "44361360-32cd-47fc-b2ba-ad6c6a8e939f",
+          "billing_cycle": "annually",
+          "price": "307.10",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "6b98c250-8392-49a9-9440-666dde1034e0",
+          "billing_cycle": "biennially",
+          "price": "537.43",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "ba2f202d-9b6e-4080-8831-3c4243eb3cb2",
+          "billing_cycle": "monthly",
+          "price": "31.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "ef8825e7-a3c3-45b6-af99-2053b0f049c7",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "d1d6654c-d548-4c30-8392-e0d18a04e14a",
+              "billing_cycle": "annually",
+              "price": "57.50",
+              "is_active": true
+            },
+            {
+              "id": "fdafe157-8ee0-4e9a-8b2c-58b154318d10",
+              "billing_cycle": "biennially",
+              "price": "100.63",
+              "is_active": true
+            },
+            {
+              "id": "26fdc6ad-05d4-49e3-af6a-a18f68fe4477",
+              "billing_cycle": "hourly",
+              "price": "0.01",
+              "is_active": true
+            },
+            {
+              "id": "e78e2773-8f5d-4978-9d9a-04ef131f3fe3",
+              "billing_cycle": "monthly",
+              "price": "5.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "83379631-1b21-4243-83e1-0af431ecc346",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "0c52da70-a4d2-4c84-9baf-6bf94699f439",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "a8d4b9ce-58a2-4223-b25f-6f8b16e0317e",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "8903b801-4d4e-443c-929d-11f9de01badc",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "4ed6abd0-f313-4af6-9d3d-228f0c1ccb50",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        }
+      ],
+      "created": "2026-05-30T13:31:03.949244Z",
+      "modified": "2026-10-05T15:09:30.831065Z"
+    },
+    {
+      "id": "cd8275e5-45a7-46f8-abcb-a3bb25f40393",
+      "name": "GP-16",
+      "slug": "gp-16-256",
+      "cpu_model": "e5-2680-v4",
+      "vcpu": 8,
+      "ram_mb": 16384,
+      "bandwidth_mbps": 250,
+      "is_active": true,
+      "description": "* **16384** Mo RAM\n* **8** vCPUS\n* **320 Go** SSD / **160 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "41281fc3-004f-47f0-bf61-1d41171b6953",
+          "volume_type": "nvme",
+          "disk_gb": 160,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "fde3b108-6928-4229-8152-06f67cdd88a5",
+          "volume_type": "ssd",
+          "disk_gb": 320,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "741c9b79-3428-46e1-b413-3fa263965494",
+          "billing_cycle": "annually",
+          "price": "287.90",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "7a0c773d-0772-4eff-844d-6594886e2029",
+          "billing_cycle": "biennially",
+          "price": "503.83",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "f08bdcec-4402-4bdb-adb6-bba187f3618d",
+          "billing_cycle": "monthly",
+          "price": "29.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "b94f99ab-d1de-4469-84d8-ae4d92fed6d3",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "38797784-6167-4d99-9427-aaa392bccc9f",
+              "billing_cycle": "annually",
+              "price": "57.50",
+              "is_active": true
+            },
+            {
+              "id": "821af86f-9f62-4466-8e78-d8e0368eb3ac",
+              "billing_cycle": "biennially",
+              "price": "100.63",
+              "is_active": true
+            },
+            {
+              "id": "398788e5-916f-4e60-9d05-02f7b9d3411a",
+              "billing_cycle": "hourly",
+              "price": "0.01",
+              "is_active": true
+            },
+            {
+              "id": "b93acde3-db26-4de3-9082-506e18f51d04",
+              "billing_cycle": "monthly",
+              "price": "5.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "7e9ce1a0-d9dd-4a10-a4e0-855cda5638d2",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "f9a421b4-dacc-42e5-b825-a73473c39f86",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "7c2c8e33-4f2b-4bfa-8da9-2d10f0ea9666",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "be1d4b9d-5e5a-4a2a-b451-33074926566c",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "ce77029b-d59c-4d4f-b3c6-dcfdd9d23b1f",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        },
+        {
+          "id": "d3c5b0d5-033e-4172-a82b-4add8c494f5e",
+          "addon": {
+            "id": "e95dc3ef-3381-40f2-850b-ad6e733ed986",
+            "slug": "windows-server-licence",
+            "name": "Windows Server Licence",
+            "name_fr": "Licence Windows Server",
+            "name_de": "Windows-Server-Lizenz",
+            "description": "Windows Server Standard licence for VPS",
+            "description_fr": "Licence Windows Server Standard pour VPS",
+            "description_de": "Windows Server Standard-Lizenz für VPS",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "dc849f4c-e62d-4c9b-9a63-fdcb0c4a9791",
+              "billing_cycle": "annually",
+              "price": "211.20",
+              "is_active": true
+            },
+            {
+              "id": "ea19cbb5-aad2-418e-8c0c-f28a6d2456ed",
+              "billing_cycle": "biennially",
+              "price": "422.40",
+              "is_active": true
+            },
+            {
+              "id": "9988fcaf-cc1e-4045-875f-d6f803811a24",
+              "billing_cycle": "hourly",
+              "price": "0.02",
+              "is_active": true
+            },
+            {
+              "id": "fd707a90-d89e-4938-b1c0-9f4bf72f46d2",
+              "billing_cycle": "monthly",
+              "price": "17.60",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        }
+      ],
+      "created": "2026-05-30T13:31:04.112902Z",
+      "modified": "2026-10-05T15:09:31.113423Z"
+    },
+    {
+      "id": "d953c3b5-3cae-4fd2-bccb-23fe906471e6",
+      "name": "P-32",
+      "slug": "p-32",
+      "cpu_model": "epyc-7443",
+      "vcpu": 8,
+      "ram_mb": 32768,
+      "bandwidth_mbps": 3000,
+      "is_active": true,
+      "description": "* **32768** Mo RAM\n* **8** vCPUS\n* **640 Go** SSD / **320 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "977dfd6c-9db2-4526-be68-3fad34ae960a",
+          "volume_type": "nvme",
+          "disk_gb": 320,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "85740d43-d34f-461a-a7e7-7389a237cb09",
+          "volume_type": "ssd",
+          "disk_gb": 640,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "bf00dd34-6df5-4978-bc5b-89cddd696703",
+          "billing_cycle": "annually",
+          "price": "614.30",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "35ad3155-417a-42f3-bd1d-2f9f4b8dc1e6",
+          "billing_cycle": "biennially",
+          "price": "1075.03",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "4cdc8993-5aac-489e-9660-32831eef3dfa",
+          "billing_cycle": "monthly",
+          "price": "63.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "39e3a8e2-7c8a-4469-8f84-77149d0408ac",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "03dff68c-6cf9-4ea0-944b-d0aa3d5fa9d8",
+              "billing_cycle": "annually",
+              "price": "115.10",
+              "is_active": true
+            },
+            {
+              "id": "06ad309d-6736-4ecd-a9d5-8730449efbc5",
+              "billing_cycle": "biennially",
+              "price": "201.43",
+              "is_active": true
+            },
+            {
+              "id": "f007dcdd-ccaa-4027-8f8b-ad901bf2f2f8",
+              "billing_cycle": "hourly",
+              "price": "0.02",
+              "is_active": true
+            },
+            {
+              "id": "bfc665a9-e80c-4608-9f4a-1714e267cdb6",
+              "billing_cycle": "monthly",
+              "price": "11.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "89af58ae-7503-45e3-a87c-f44f024411e9",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "8b6a27f5-8081-49d6-a3ec-0b138f5c6fb8",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "493262da-c446-4f2d-a199-7d9a4aa82f8f",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "dbcfbe26-9535-42c1-9181-b00d2e8612a8",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "6d03e39a-31f7-4db7-9876-d1c372ce03c4",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        }
+      ],
+      "created": "2026-05-30T13:31:04.046093Z",
+      "modified": "2026-10-05T15:09:30.992452Z"
+    },
+    {
+      "id": "1b61a919-adee-47f5-a7ec-515a1755aa84",
+      "name": "HP-32",
+      "slug": "hp-32-247",
+      "cpu_model": "epyc-9554",
+      "vcpu": 16,
+      "ram_mb": 32768,
+      "bandwidth_mbps": 3000,
+      "is_active": true,
+      "description": "* **32768** Mo RAM\n* **16** vCPUS\n* **640 Go** SSD / **320 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "fa33fc8d-5058-43ab-8683-0d42dfa6c6fa",
+          "volume_type": "nvme",
+          "disk_gb": 320,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "0f27841b-6eb7-4b8b-b24d-17bdea60feac",
+          "volume_type": "ssd",
+          "disk_gb": 640,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "1007a6f0-6cae-49af-9fb6-dba4a1bcc30e",
+          "billing_cycle": "annually",
+          "price": "614.30",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "1c86ad64-ea52-47a2-a908-4ad6fe34a31f",
+          "billing_cycle": "biennially",
+          "price": "1075.03",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "be6a1b79-9ab5-4853-8ed1-12dfd8658c97",
+          "billing_cycle": "monthly",
+          "price": "63.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "e3a9c9e8-a5f4-4db1-9b97-b79c302b79fe",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "c7eb73ea-06b3-4154-9f2c-5c17a2b895f3",
+              "billing_cycle": "annually",
+              "price": "115.10",
+              "is_active": true
+            },
+            {
+              "id": "dd81aa5b-c50f-46d1-84b2-27ef477aa935",
+              "billing_cycle": "biennially",
+              "price": "201.43",
+              "is_active": true
+            },
+            {
+              "id": "9042761b-e50b-41a1-ba73-752f7e9ad455",
+              "billing_cycle": "hourly",
+              "price": "0.02",
+              "is_active": true
+            },
+            {
+              "id": "d4772207-9e78-485f-8419-a2de7f0ad84d",
+              "billing_cycle": "monthly",
+              "price": "11.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "858569cd-4de0-48c2-a6ed-5683027b617d",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "5cd9ae4a-480a-47fe-bddf-b088652c265f",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "737cf0f2-4dd4-4946-9b77-84501dc88c35",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "4d59fad7-867b-407c-b458-29679e74108b",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "0a18686f-4e24-4e6a-b19a-767a818e6b76",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        }
+      ],
+      "created": "2026-05-30T13:31:03.965524Z",
+      "modified": "2026-10-05T15:09:30.857314Z"
+    },
+    {
+      "id": "25bcfc2f-7c32-4165-a221-8f6b56141dc6",
+      "name": "GP-32",
+      "slug": "gp-32-257",
+      "cpu_model": "e5-2680-v4",
+      "vcpu": 16,
+      "ram_mb": 32768,
+      "bandwidth_mbps": 300,
+      "is_active": true,
+      "description": "* **32768** Mo RAM\n* **16** vCPUS\n* **640 Go** SSD / **320 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "f3893ac2-438c-4e1d-8905-63c74eedc497",
+          "volume_type": "nvme",
+          "disk_gb": 320,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "babaa076-078f-4bc0-9d4c-7b4bd62e5af5",
+          "volume_type": "ssd",
+          "disk_gb": 640,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "755345be-3d1b-4ffb-a7a6-126dce28ba04",
+          "billing_cycle": "annually",
+          "price": "575.90",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "4eb17a67-158c-4dc3-83c6-305a79280d25",
+          "billing_cycle": "biennially",
+          "price": "1007.83",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "94fbadb1-c588-478a-b97b-d24ba6ee04e0",
+          "billing_cycle": "monthly",
+          "price": "59.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "ee6ab974-4e7b-4c7c-b980-0ec7db308595",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "b541947e-4329-4b09-aee2-ee205290352b",
+              "billing_cycle": "annually",
+              "price": "115.10",
+              "is_active": true
+            },
+            {
+              "id": "35a089b4-deb5-45be-99b3-bc9e89b79216",
+              "billing_cycle": "biennially",
+              "price": "201.43",
+              "is_active": true
+            },
+            {
+              "id": "70beb960-fc76-4334-bcf8-05e18ec6e1a6",
+              "billing_cycle": "hourly",
+              "price": "0.02",
+              "is_active": true
+            },
+            {
+              "id": "09f85601-b93a-4fac-82c9-a3c65db683a9",
+              "billing_cycle": "monthly",
+              "price": "11.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "12d7b4cd-ac84-400c-a56f-e0c6f64a59f1",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "89c07841-f005-4bff-80ca-4e0f5f6d74e8",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "0eece302-3ab6-457d-ae86-b072c99c97ae",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "dedd4b88-29f9-406d-baa3-60fcc6e90ee8",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "0e9a29a4-c121-460c-bda0-64bf317b9722",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        },
+        {
+          "id": "df400e66-5da5-4b4b-8e26-c872bb676216",
+          "addon": {
+            "id": "e95dc3ef-3381-40f2-850b-ad6e733ed986",
+            "slug": "windows-server-licence",
+            "name": "Windows Server Licence",
+            "name_fr": "Licence Windows Server",
+            "name_de": "Windows-Server-Lizenz",
+            "description": "Windows Server Standard licence for VPS",
+            "description_fr": "Licence Windows Server Standard pour VPS",
+            "description_de": "Windows Server Standard-Lizenz für VPS",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "520eee06-4ee1-4e73-9a58-e6d49761eb56",
+              "billing_cycle": "annually",
+              "price": "403.20",
+              "is_active": true
+            },
+            {
+              "id": "20cc7b46-f543-45e7-aebd-c92f5c7cd7c5",
+              "billing_cycle": "biennially",
+              "price": "806.40",
+              "is_active": true
+            },
+            {
+              "id": "1bc5b9eb-ddc7-42f1-bd93-8f089902910a",
+              "billing_cycle": "hourly",
+              "price": "0.05",
+              "is_active": true
+            },
+            {
+              "id": "2415fca3-d269-43c5-b715-d5881bc42867",
+              "billing_cycle": "monthly",
+              "price": "33.60",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        }
+      ],
+      "created": "2026-05-30T13:31:04.130078Z",
+      "modified": "2026-10-05T15:09:31.145099Z"
+    },
+    {
+      "id": "8a48ac9f-ae06-4eb8-8ffd-7d9b8a4a7531",
+      "name": "HP-64",
+      "slug": "hp-64",
+      "cpu_model": "epyc-9554",
+      "vcpu": 32,
+      "ram_mb": 65536,
+      "bandwidth_mbps": 3000,
+      "is_active": true,
+      "description": "* **65536** Mo RAM\n* **32** vCPUS\n* **1280 Go** SSD / **640 Go** NVME",
+      "available_volumes": [
+        {
+          "id": "74f324ef-f8c8-45da-9f71-fe174354fbda",
+          "volume_type": "nvme",
+          "disk_gb": 640,
+          "is_default": true,
+          "is_active": true
+        },
+        {
+          "id": "13b9285b-6afe-4c2f-834f-0e804f472c50",
+          "volume_type": "ssd",
+          "disk_gb": 1280,
+          "is_default": false,
+          "is_active": true
+        }
+      ],
+      "pricing_options": [
+        {
+          "id": "b4ce02b3-486a-4282-8587-2872ad6d9127",
+          "billing_cycle": "annually",
+          "price": "1228.70",
+          "discount_percent": "20.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "be24e28e-8f7f-494b-ae9d-bd33fb1d7c12",
+          "billing_cycle": "biennially",
+          "price": "2150.23",
+          "discount_percent": "30.00",
+          "is_default": false,
+          "is_active": true
+        },
+        {
+          "id": "c23139db-6d6b-4351-98b6-5d971ffb2d88",
+          "billing_cycle": "monthly",
+          "price": "127.99",
+          "discount_percent": "0.00",
+          "is_default": true,
+          "is_active": true
+        }
+      ],
+      "available_addons": [
+        {
+          "id": "ed2bbba5-703f-41f3-b1eb-8ba8bf45168f",
+          "addon": {
+            "id": "9e961e03-e688-40dc-b98d-3af0e45c3c2f",
+            "slug": "daily-backup",
+            "name": "Daily Backup",
+            "name_fr": "Sauvegarde journalière",
+            "name_de": "Tägliche Sicherung",
+            "description": "Daily automated backup for your instance",
+            "description_fr": "Sauvegarde automatique journalière de votre instance",
+            "description_de": "Automatische tägliche Sicherung Ihrer Instanz",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "e83a4947-eb1f-4acd-b1f3-3a9d6f803bb0",
+              "billing_cycle": "annually",
+              "price": "115.10",
+              "is_active": true
+            },
+            {
+              "id": "cb7387a8-a143-4712-9f2f-0945779ca778",
+              "billing_cycle": "biennially",
+              "price": "201.43",
+              "is_active": true
+            },
+            {
+              "id": "b0571eae-bd18-4824-86f9-5103d3bc128c",
+              "billing_cycle": "hourly",
+              "price": "0.02",
+              "is_active": true
+            },
+            {
+              "id": "1e754caf-0bf3-4be0-a9d5-8c679d82883d",
+              "billing_cycle": "monthly",
+              "price": "11.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": false
+        },
+        {
+          "id": "9c4d666a-f173-49c6-9c5a-85646cb5f574",
+          "addon": {
+            "id": "c985599e-0259-43e1-9e5a-a1424667b6db",
+            "slug": "on-demand-snapshot",
+            "name": "On-Demand Snapshot",
+            "name_fr": "Snapshot à la demande",
+            "name_de": "Snapshot auf Abruf",
+            "description": "On-demand snapshots for your instance",
+            "description_fr": "Snapshots à la demande de votre instance",
+            "description_de": "Snapshots Ihrer Instanz auf Abruf",
+            "billing_type": "recurring",
+            "is_active": true
+          },
+          "pricing_options": [
+            {
+              "id": "89e9079a-fee9-413e-a77a-6ba39aa2cd1e",
+              "billing_cycle": "annually",
+              "price": "28.70",
+              "is_active": true
+            },
+            {
+              "id": "e19d4a19-8025-4dec-b962-dadbec8efebf",
+              "billing_cycle": "biennially",
+              "price": "50.23",
+              "is_active": true
+            },
+            {
+              "id": "27dfdeef-0c93-45eb-b062-6354151d8589",
+              "billing_cycle": "hourly",
+              "price": "0.00",
+              "is_active": true
+            },
+            {
+              "id": "c7a9e3ce-2cf4-471b-b00e-0f92a296ddc7",
+              "billing_cycle": "monthly",
+              "price": "2.99",
+              "is_active": true
+            }
+          ],
+          "is_included": false,
+          "is_default": false,
+          "is_active": true,
+          "is_hidden": true
+        }
+      ],
+      "created": "2026-05-30T13:31:03.981089Z",
+      "modified": "2026-10-05T15:09:30.883094Z"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# Build output
+/terraform-provider-onetsolutions
+/dist/
+/bin/
+
+# Terraform working files of the examples and of local runs
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+.terraformrc
+terraform.rc
+
+# Test and tool output
+.docs-check/
+*.out
+*.test
+coverage.*
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store

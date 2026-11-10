@@ -1,0 +1,22 @@
+name: Feature request
+description: A new resource, data source or attribute, or a change of behaviour.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What would you like to manage?
+      description: The resource, data source or attribute, and what you would do with it.
+    validations:
+      required: true
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Example configuration
+      description: How you would like to write it.
+      render: terraform
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Links to the console feature or the API operation concerned, workarounds you use today.

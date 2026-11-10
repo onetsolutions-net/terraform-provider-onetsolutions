@@ -1,0 +1,71 @@
+---
+page_title: "OnetSolutions Provider"
+description: |-
+  Manage OnetSolutions compute, network and DNS resources through the public API.
+---
+
+# OnetSolutions Provider
+
+The OnetSolutions provider manages compute instances, SSH keys, VPCs, firewalls, snapshots, DNS
+zones and records, and the settings of registered domains through the OnetSolutions public API
+([OpenAPI schema](https://api.onetsolutions.net/schema)). It works with Terraform 1.5+ and
+OpenTofu 1.6+, with the same configuration.
+
+~> **Billing.** Creating an instance places an order billed on its billing cycle (monthly or
+longer). Destroying an instance requests its cancellation at the end of the billing period: it
+keeps running, and billed, until then. Snapshots beyond an instance's allowance are billed too.
+The pages of billed resources say so at the top.
+
+## Authentication
+
+Create an API key in the OnetSolutions console (it starts with `sk-onetsolutions-`) and give it to
+the provider through `api_key` or, preferably, the `ONETSOLUTIONS_API_KEY` environment variable,
+so it never lands in a configuration file. The key acts with the rights of the user who created
+it, in every organization and project that user can reach. The provider never writes it to a log.
+
+Every setting is optional in the configuration, so `terraform validate` works offline; the
+provider reports a missing `api_key` when it first needs the API.
+
+## Settings and environment variables
+
+| Setting | Environment variable | Default |
+|---|---|---|
+| `api_key` | `ONETSOLUTIONS_API_KEY` | — (required) |
+| `api_url` | `ONETSOLUTIONS_API_URL` | `https://api.onetsolutions.net` (https only, except `localhost`) |
+| `organization_id` | `ONETSOLUTIONS_ORGANIZATION_ID` | the only organization of the key's user |
+| `project_id` | `ONETSOLUTIONS_PROJECT_ID` | the only project of the organization |
+| `max_requests_per_second` | `ONETSOLUTIONS_MAX_REQUESTS_PER_SECOND` | `10` |
+
+`organization_id` and `project_id` are defaults for the resources that do not set their own. They
+apply when a resource is created only: changing them later never moves or recreates an existing
+resource. A resource recreates only when its own `organization_id` or `project_id` is set
+explicitly to a different value.
+
+## Example Usage
+
+{{ tffile "examples/provider/provider.tf" }}
+
+## Quick start
+
+Export the API key, then declare an SSH key, a VPC, an instance on it and a DNS record pointing
+at the instance:
+
+```shell
+export ONETSOLUTIONS_API_KEY="sk-onetsolutions-..."
+```
+
+{{ tffile "examples/provider/quickstart.tf" }}
+
+`terraform plan` shows the price of the instance order as a warning before anything is ordered.
+A complete stack — two instances behind a firewall, a DNS zone and its records — is in
+[`examples/complete`](https://github.com/onetsolutions-net/terraform-provider-onetsolutions/tree/main/examples/complete).
+
+## Importing
+
+Resources import from `<organization_id>/<project_id>/<id>`, or from the bare `<id>` when the
+provider knows the organization and project; child objects (a DNS record, a snapshot or the
+reverse DNS of an instance's address) from `<organization_id>/<project_id>/<parent_id>/<id>` or
+`<parent_id>/<id>`. A firewall is the rule set of one instance, so it imports from the
+instance's ID: `<organization_id>/<project_id>/<instance_id>` or `<instance_id>`.
+
+{{ .SchemaMarkdown | trimspace }}

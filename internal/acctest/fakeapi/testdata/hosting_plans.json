@@ -1,0 +1,116 @@
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "page": 1,
+  "page_size": 100,
+  "total_pages": 1,
+  "results": [
+    {
+      "id": "a3db8965-dc94-485f-b0dc-c6f2d1d87e24",
+      "name": "Hébergement Business",
+      "name_en": "Business Hosting",
+      "name_fr": "Hébergement Business",
+      "name_de": "",
+      "slug": "hebergement-business",
+      "description": "* **50Go** NVME de stockage\n* **Boîtes e-mail pro illimitées**\n* **Certificat SSL inclus**\n* Installation automatique de nombreux CMS\n* Wordpress Toolkit",
+      "description_en": "",
+      "description_fr": "",
+      "description_de": "",
+      "hosting_type": "hostingaccount",
+      "group_id": "37fc704f-12a8-4f50-97eb-14ea67a49c3c",
+      "group_name": "Web",
+      "group_name_en": "",
+      "group_name_fr": "",
+      "group_name_de": "",
+      "group_slug": "web",
+      "disk_space_mb": 50000,
+      "bandwidth_mb": 0,
+      "max_email_accounts": 0,
+      "max_databases": 0,
+      "max_subdomains": 0,
+      "max_addon_domains": 0,
+      "max_parked_domains": 0,
+      "max_ftp_accounts": 0,
+      "max_accounts": 0,
+      "default_price": {
+        "billing_cycle": "monthly",
+        "price": "9.99"
+      },
+      "pricing": [
+        {
+          "billing_cycle": "monthly",
+          "price": "9.99",
+          "discount_percent": "0.00",
+          "is_default": true
+        },
+        {
+          "billing_cycle": "annually",
+          "price": "95.90",
+          "discount_percent": "20.00",
+          "is_default": false
+        },
+        {
+          "billing_cycle": "biennially",
+          "price": "167.83",
+          "discount_percent": "30.00",
+          "is_default": false
+        }
+      ],
+      "is_active": true
+    },
+    {
+      "id": "c2e74304-62c9-4bbe-9b9e-aaf3bddef705",
+      "name": "Hébergement Individuel",
+      "name_en": "Personal Hosting",
+      "name_fr": "Hébergement Individuel",
+      "name_de": "",
+      "slug": "hebergement-individuel",
+      "description": "* **10Go** NVME de stockage\n* **10** boîtes e-mail pro\n* **Certificat SSL inclus**",
+      "description_en": "",
+      "description_fr": "",
+      "description_de": "",
+      "hosting_type": "hostingaccount",
+      "group_id": "37fc704f-12a8-4f50-97eb-14ea67a49c3c",
+      "group_name": "Web",
+      "group_name_en": "",
+      "group_name_fr": "",
+      "group_name_de": "",
+      "group_slug": "web",
+      "disk_space_mb": 10000,
+      "bandwidth_mb": 0,
+      "max_email_accounts": 0,
+      "max_databases": 0,
+      "max_subdomains": 0,
+      "max_addon_domains": 0,
+      "max_parked_domains": 0,
+      "max_ftp_accounts": 0,
+      "max_accounts": 0,
+      "default_price": {
+        "billing_cycle": "monthly",
+        "price": "2.99"
+      },
+      "pricing": [
+        {
+          "billing_cycle": "monthly",
+          "price": "2.99",
+          "discount_percent": "0.00",
+          "is_default": true
+        },
+        {
+          "billing_cycle": "annually",
+          "price": "28.70",
+          "discount_percent": "20.01",
+          "is_default": false
+        },
+        {
+          "billing_cycle": "biennially",
+          "price": "50.23",
+          "discount_percent": "30.00",
+          "is_default": false
+        }
+      ],
+      "is_active": true
+    }
+  ]
+}

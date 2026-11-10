@@ -1,0 +1,199 @@
+{
+  "count": 7,
+  "next": null,
+  "previous": null,
+  "page": 1,
+  "page_size": 100,
+  "total_pages": 1,
+  "results": [
+    {
+      "id": "7ffc7446-2118-4a9b-8f6e-b47339b9b7a9",
+      "slug": "easypanel",
+      "name": "Easypanel",
+      "logo_url": "https://onetsolutions.net/images/control-panels/easypanel.svg",
+      "description": "Modern Docker-based control panel to deploy your applications, databases and websites with automatic HTTPS certificates.",
+      "access_port": 3000,
+      "compatible_images": [
+        {
+          "id": "69458c37-2fea-41e0-96ae-410cd5424f0c",
+          "slug": "ubuntu-2604",
+          "name": "Ubuntu 26.04 LTS"
+        }
+      ],
+      "baremetal_images": [
+        {
+          "slug": "ubuntu-26-04",
+          "name": "Ubuntu 26.04 LTS"
+        }
+      ],
+      "min_vcpu": 1,
+      "min_ram_mb": 2048,
+      "min_disk_gb": 30,
+      "install_minutes_min": 3,
+      "install_minutes_max": 5,
+      "docs_url": "https://easypanel.io/docs"
+    },
+    {
+      "id": "39cbdf40-e631-4b2c-afd7-dcc680bd7585",
+      "slug": "dokploy",
+      "name": "Dokploy",
+      "logo_url": "https://onetsolutions.net/images/control-panels/dokploy.svg",
+      "description": "Open source Docker-based platform to deploy your applications and databases from Git, with automatic HTTPS certificates.",
+      "access_port": 3000,
+      "compatible_images": [
+        {
+          "id": "69458c37-2fea-41e0-96ae-410cd5424f0c",
+          "slug": "ubuntu-2604",
+          "name": "Ubuntu 26.04 LTS"
+        }
+      ],
+      "baremetal_images": [
+        {
+          "slug": "ubuntu-26-04",
+          "name": "Ubuntu 26.04 LTS"
+        }
+      ],
+      "min_vcpu": 2,
+      "min_ram_mb": 2048,
+      "min_disk_gb": 30,
+      "install_minutes_min": 3,
+      "install_minutes_max": 5,
+      "docs_url": "https://docs.dokploy.com"
+    },
+    {
+      "id": "da59613a-eb1a-429e-ade3-1bbd0a65a11d",
+      "slug": "cloudron",
+      "name": "Cloudron",
+      "logo_url": "https://onetsolutions.net/images/control-panels/cloudron.svg",
+      "description": "Self-hosting platform that installs and updates your applications, with built-in backups, email and user management.",
+      "access_port": 443,
+      "compatible_images": [
+        {
+          "id": "69458c37-2fea-41e0-96ae-410cd5424f0c",
+          "slug": "ubuntu-2604",
+          "name": "Ubuntu 26.04 LTS"
+        }
+      ],
+      "baremetal_images": [
+        {
+          "slug": "ubuntu-26-04",
+          "name": "Ubuntu 26.04 LTS"
+        }
+      ],
+      "min_vcpu": 2,
+      "min_ram_mb": 2048,
+      "min_disk_gb": 30,
+      "install_minutes_min": 15,
+      "install_minutes_max": 25,
+      "docs_url": "https://docs.cloudron.io"
+    },
+    {
+      "id": "916dd095-88be-4621-b822-c64019ef3e7e",
+      "slug": "cpanel",
+      "name": "cPanel & WHM",
+      "logo_url": "https://onetsolutions.net/images/control-panels/cpanel.svg",
+      "description": "The reference web hosting panel: websites, email, databases and DNS, managed from WHM. cPanel licence required.",
+      "access_port": 2087,
+      "compatible_images": [
+        {
+          "id": "546c1512-daec-437a-a7dd-74d964fd2af4",
+          "slug": "almalinux-10",
+          "name": "Almalinux 10"
+        }
+      ],
+      "baremetal_images": [
+        {
+          "slug": "cloudlinux-10-cpanel",
+          "name": "CloudLinux 10 + cPanel"
+        }
+      ],
+      "min_vcpu": 2,
+      "min_ram_mb": 4096,
+      "min_disk_gb": 40,
+      "install_minutes_min": 20,
+      "install_minutes_max": 45,
+      "docs_url": "https://docs.cpanel.net"
+    },
+    {
+      "id": "e7fde78f-1540-458b-b3bd-87818107cd0c",
+      "slug": "plesk",
+      "name": "Plesk",
+      "logo_url": "https://onetsolutions.net/images/control-panels/plesk.webp",
+      "description": "Complete web hosting panel to manage WordPress sites, email, databases and security from a single interface. Plesk licence required.",
+      "access_port": 8443,
+      "compatible_images": [
+        {
+          "id": "69458c37-2fea-41e0-96ae-410cd5424f0c",
+          "slug": "ubuntu-2604",
+          "name": "Ubuntu 26.04 LTS"
+        }
+      ],
+      "baremetal_images": [
+        {
+          "slug": "ubuntu-26-04",
+          "name": "Ubuntu 26.04 LTS"
+        }
+      ],
+      "min_vcpu": 2,
+      "min_ram_mb": 2048,
+      "min_disk_gb": 40,
+      "install_minutes_min": 15,
+      "install_minutes_max": 30,
+      "docs_url": "https://docs.plesk.com"
+    },
+    {
+      "id": "8f67a880-5011-4126-a808-831d1526b207",
+      "slug": "hestiacp",
+      "name": "HestiaCP",
+      "logo_url": "https://onetsolutions.net/images/control-panels/hestiacp.png",
+      "description": "Lightweight open source web hosting panel: websites, email, databases and DNS, with no licence.",
+      "access_port": 8083,
+      "compatible_images": [
+        {
+          "id": "de3cfa5d-1baf-4c1b-9c89-1cce86b86486",
+          "slug": "debian-13",
+          "name": "Debian 13"
+        }
+      ],
+      "baremetal_images": [
+        {
+          "slug": "debian-13",
+          "name": "Debian 13"
+        }
+      ],
+      "min_vcpu": 1,
+      "min_ram_mb": 2048,
+      "min_disk_gb": 20,
+      "install_minutes_min": 10,
+      "install_minutes_max": 20,
+      "docs_url": "https://hestiacp.com/docs"
+    },
+    {
+      "id": "48d59d90-4aef-4784-af39-282b80f6b950",
+      "slug": "yunohost",
+      "name": "YunoHost",
+      "logo_url": "https://onetsolutions.net/images/control-panels/yunohost.png",
+      "description": "Open source Debian-based self-hosting distribution: applications, email, users and backups managed from a single interface, with no licence.",
+      "access_port": 443,
+      "compatible_images": [
+        {
+          "id": "93345b18-924f-48bb-9489-4c418094d30d",
+          "slug": "debian-12",
+          "name": "Debian 12"
+        }
+      ],
+      "baremetal_images": [
+        {
+          "slug": "debian-12",
+          "name": "Debian 12"
+        }
+      ],
+      "min_vcpu": 1,
+      "min_ram_mb": 2048,
+      "min_disk_gb": 20,
+      "install_minutes_min": 10,
+      "install_minutes_max": 20,
+      "docs_url": "https://doc.yunohost.org"
+    }
+  ]
+}
