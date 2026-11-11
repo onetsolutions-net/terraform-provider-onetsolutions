@@ -146,6 +146,9 @@ type Instance struct {
 	Locked                  bool               `json:"locked"`
 	LockReason              *string            `json:"lock_reason"`
 	Created                 string             `json:"created"`
+
+	// BackupEnabled reports whether the instance has the backup option, a paid add-on.
+	BackupEnabled bool `json:"backup_enabled"`
 }
 
 // VMStatus returns the last power state read, empty when unknown.
@@ -291,7 +294,12 @@ var (
 	routeResizeComputeInstance = newRoute(http.MethodPost, computeInstancesPath+"/{id}/resize")
 	routePreviewInstanceResize = newRetrySafeRoute(computeInstancesPath + "/{id}/resize-preview")
 	routeEligibleInstanceSizes = newRoute(http.MethodGet, computeInstancesPath+"/{id}/eligible-sizes")
+	routeEnableInstanceIPv6    = newRoute(http.MethodPost, computeInstancesPath+"/{id}/ipv6")
 )
+
+// CodeIPv6AlreadyEnabled is the code of the 409 enable_instance_ipv6 answers when the instance
+// already has an IPv6 block.
+const CodeIPv6AlreadyEnabled = "ipv6_already_enabled"
 
 // ListInstancesByOrder lists the instances the API reports as created from an order, whatever
 // their status. An older API version ignores the filter and lists every instance without
@@ -392,4 +400,10 @@ func (c *Client) PreviewInstanceResize(ctx context.Context, scope Scope, id stri
 // ListEligibleInstanceSizes lists the sizes an instance may be resized to.
 func (c *Client) ListEligibleInstanceSizes(ctx context.Context, scope Scope, id string) ([]InstanceSizeRef, error) {
 	return listAll[InstanceSizeRef](ctx, c, routeEligibleInstanceSizes, scope.Params("id", id), nil)
+}
+
+// EnableInstanceIPv6 reserves an IPv6 block for an instance and returns the task configuring it.
+// IPv6 cannot be disabled again.
+func (c *Client) EnableInstanceIPv6(ctx context.Context, scope Scope, id string) (string, error) {
+	return c.powerAction(ctx, routeEnableInstanceIPv6, scope, id)
 }

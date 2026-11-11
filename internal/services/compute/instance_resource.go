@@ -17,6 +17,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/booldefault"
+	"github.com/hashicorp/terraform-plugin-framework/resource/schema/boolplanmodifier"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/planmodifier"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/stringdefault"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/stringplanmodifier"
@@ -74,6 +75,7 @@ type instanceModel struct {
 	State                  types.String   `tfsdk:"state"`
 	AllowStoppingForUpdate types.Bool     `tfsdk:"allow_stopping_for_update"`
 	DeletionProtection     types.Bool     `tfsdk:"deletion_protection"`
+	IPv6Enabled            types.Bool     `tfsdk:"ipv6_enabled"`
 	CancellationReasonCode types.String   `tfsdk:"cancellation_reason_code"`
 	CancellationReason     types.String   `tfsdk:"cancellation_reason"`
 	OrderID                types.String   `tfsdk:"order_id"`
@@ -154,6 +156,7 @@ func (m *instanceModel) fill(ctx context.Context, instance *client.Instance, sco
 	m.Status = types.StringValue(instance.Status)
 	m.PrimaryIPv4 = optionalString(instance.PrimaryIPv4)
 	m.PrimaryIPv6 = optionalString(instance.PrimaryIPv6)
+	m.IPv6Enabled = types.BoolValue(instance.PrimaryIPv6 != nil)
 	addresses, d := ipAddressesValue(instance.IPAddresses)
 	diags.Append(d...)
 	m.IPAddresses = addresses
@@ -178,7 +181,7 @@ func (m *instanceModel) clearUnknown() {
 			*s = types.StringNull()
 		}
 	}
-	for _, b := range []*types.Bool{&m.IsInstalled, &m.Locked} {
+	for _, b := range []*types.Bool{&m.IsInstalled, &m.Locked, &m.IPv6Enabled} {
 		if b.IsUnknown() {
 			*b = types.BoolNull()
 		}
@@ -207,7 +210,7 @@ func (r *instanceResource) Schema(ctx context.Context, _ resource.SchemaRequest,
 	createOnlyBool := []planmodifier.Bool{common.CreateOnlyWarn(createOnlyEffect)}
 
 	resp.Schema = schema.Schema{
-		MarkdownDescription: "Manages an OnetSolutions compute instance. Creating one places a billed order.",
+		MarkdownDescription: "Manages an OnetSolutions compute instance, a billed order on its billing cycle.",
 		Attributes: common.MergeAttributes(common.ScopeAttributes(), map[string]schema.Attribute{
 			common.AttrID: common.IDAttribute("instance"),
 			"name": schema.StringAttribute{
@@ -393,6 +396,15 @@ func (r *instanceResource) Schema(ctx context.Context, _ resource.SchemaRequest,
 				MarkdownDescription: "The primary public IPv6 address, null when IPv6 is not enabled.",
 				PlanModifiers:       []planmodifier.String{stringplanmodifier.UseStateForUnknown()},
 			},
+			"ipv6_enabled": schema.BoolAttribute{
+				Optional: true,
+				Computed: true,
+				MarkdownDescription: "Whether the instance has public IPv6, at no cost. `true` enables it (on a new " +
+					"instance, once installed); the operating system picks the address up at its next reboot. IPv6 cannot " +
+					"be disabled: `false` on an instance that has it is refused at plan time. When unset, it follows the " +
+					"instance.",
+				PlanModifiers: []planmodifier.Bool{boolplanmodifier.UseStateForUnknown()},
+			},
 			"ip_addresses": schema.ListNestedAttribute{
 				Computed:            true,
 				MarkdownDescription: "Every IP address of the instance.",
@@ -536,6 +548,9 @@ func (r *instanceResource) ModifyPlan(ctx context.Context, req resource.ModifyPl
 		return
 	}
 	warnReplacement(&plan, &state, &resp.Diagnostics)
+	if !planIPv6(ctx, &plan, &state, resp) {
+		return
+	}
 	if !checkResizable(&plan, &state, &resp.Diagnostics) || !r.Data().Ready() {
 		return
 	}
@@ -585,6 +600,23 @@ func warnReplacement(plan, state *instanceModel, diags *diag.Diagnostics) {
 	diags.AddWarning("Replacing this instance keeps the old one billed",
 		fmt.Sprintf("The plan replaces instance %s (%s): it orders a new, billed instance, and the old one is not "+
 			"deleted. %s", state.ID.ValueString(), state.Name.ValueString(), cancellationEffect(state)))
+}
+
+// planIPv6 refuses at plan time to disable IPv6, which the API cannot do, and plans the IPv6
+// address unknown when IPv6 is being enabled. A replacement is a new instance: nothing to refuse.
+func planIPv6(ctx context.Context, plan, state *instanceModel, resp *resource.ModifyPlanResponse) bool {
+	if !common.Known(plan.IPv6Enabled) || plan.IPv6Enabled.Equal(state.IPv6Enabled) ||
+		common.Known(plan.ImageID) && !plan.ImageID.Equal(state.ImageID) {
+		return true
+	}
+	if !plan.IPv6Enabled.ValueBool() {
+		resp.Diagnostics.AddAttributeError(path.Root("ipv6_enabled"), "IPv6 cannot be disabled",
+			fmt.Sprintf("Instance %s has IPv6 (%s), and it cannot be disabled once enabled. Set ipv6_enabled = true, or "+
+				"remove it from the configuration.", state.ID.ValueString(), state.PrimaryIPv6.ValueString()))
+		return false
+	}
+	resp.Diagnostics.Append(resp.Plan.SetAttribute(ctx, path.Root("primary_ipv6"), types.StringUnknown())...)
+	return !resp.Diagnostics.HasError()
 }
 
 // checkOrderable refuses at plan time what the API's order refuses or ignores.
@@ -766,6 +798,12 @@ func (r *instanceResource) Create(ctx context.Context, req resource.CreateReques
 	if err = r.applyOrderGaps(ctx, c, &plan, instance); err != nil {
 		afterInstall("The instance was created but its tags or VPC could not be set", err)
 		return
+	}
+	if plan.IPv6Enabled.ValueBool() {
+		if err = r.enableIPv6(ctx, c, scope, id); err != nil {
+			afterInstall("The instance was created but IPv6 could not be enabled", err)
+			return
+		}
 	}
 	instance, err = r.setPower(ctx, c, scope, id, plan.State.ValueString())
 	if err != nil {
@@ -1038,6 +1076,12 @@ func (r *instanceResource) Update(ctx context.Context, req resource.UpdateReques
 		failed("Could not update the instance", err)
 		return
 	}
+	if plan.IPv6Enabled.ValueBool() && !state.IPv6Enabled.ValueBool() {
+		if err := r.enableIPv6(ctx, c, scope, id); err != nil {
+			failed("Could not enable IPv6 on the instance", err)
+			return
+		}
+	}
 	stopped, err := r.resize(ctx, c, &plan, &state)
 	if err != nil {
 		if stopped {
@@ -1140,6 +1184,27 @@ func (r *instanceResource) updateAttributes(ctx context.Context, c *client.Clien
 		wanted = append(wanted, client.TaskTypeUpdateVPC)
 	}
 	return r.waitNewTasks(ctx, c, scope, id, before, wanted)
+}
+
+// enableIPv6 enables IPv6 and waits for the task configuring it. An instance that already has
+// IPv6 counts as enabled.
+func (r *instanceResource) enableIPv6(ctx context.Context, c *client.Client, scope client.Scope, id string) error {
+	var taskID string
+	err := waiter.Retry(ctx, r.Data().Waiter, "enabling IPv6 on instance "+id, func(ctx context.Context) error {
+		var enableErr error
+		taskID, enableErr = c.EnableInstanceIPv6(ctx, scope, id)
+		return enableErr
+	}, func(err error) bool {
+		return client.IsConflict(err) && !client.HasCode(err, client.CodeIPv6AlreadyEnabled)
+	})
+	switch {
+	case client.HasCode(err, client.CodeIPv6AlreadyEnabled):
+		return nil
+	case err != nil:
+		return err
+	}
+	_, err = waiter.InstanceTask(ctx, r.Data().Waiter, c, scope, id, taskID)
+	return err
 }
 
 // waitNewTasks waits for the most recent task of each type that was not listed before.

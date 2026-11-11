@@ -59,6 +59,7 @@ func registerCompute(s *Server) {
 	s.handle(http.MethodPost, computeInstancesTemplate+"/{id}/resize", s.withScope(s.resizeComputeInstance))
 	s.handle(http.MethodPost, computeInstancesTemplate+"/{id}/resize-preview", s.withScope(s.previewComputeInstanceResize))
 	s.handle(http.MethodGet, computeInstancesTemplate+"/{id}/eligible-sizes", s.withScope(s.eligibleComputeInstanceSizes))
+	registerGPU(s)
 }
 
 func (s *Server) listComputeInstances(w http.ResponseWriter, r *http.Request, scope Scope) {

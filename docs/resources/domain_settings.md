@@ -10,7 +10,8 @@ description: |-
 
 Manages the name servers, automatic renewal, registry lock and WHOIS privacy of a registered domain.
 
-The domain must already be registered in the project. A setting left unset is not managed and
+The domain must already be registered in the project, in the console or with
+`onetsolutions_domain`. A setting left unset is not managed and
 reports the domain's current value.
 
 -> **Destroying only removes it from the state.** This resource never orders, transfers, renews or

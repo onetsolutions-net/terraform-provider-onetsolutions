@@ -1,20 +1,27 @@
 ---
 page_title: "OnetSolutions Provider"
 description: |-
-  Manage OnetSolutions compute, network and DNS resources through the public API.
+  Manage OnetSolutions compute instances, private networks, DNS, domains and web hostings as code.
 ---
 
 # OnetSolutions Provider
 
-The OnetSolutions provider manages compute instances, SSH keys, VPCs, firewalls, snapshots, DNS
-zones and records, and the settings of registered domains through the OnetSolutions public API
-([OpenAPI schema](https://api.onetsolutions.net/schema)). It works with Terraform 1.5+ and
-OpenTofu 1.6+, with the same configuration.
+Use the OnetSolutions provider to manage your OnetSolutions infrastructure as code: compute
+instances with their snapshots, backups, GPUs and IPv6 addresses, private networks (VPCs) and
+firewalls, SSH keys, domain registrations and their settings, DNS zones and records, and web
+hostings with their PHP versions, WordPress sites, databases, mailboxes, FTP accounts, cron jobs,
+subdomains, addon domains and redirects. Actions reboot, reset, reinstall or restore an instance
+on demand (Terraform 1.14 and later).
 
-~> **Billing.** Creating an instance places an order billed on its billing cycle (monthly or
-longer). Destroying an instance requests its cancellation at the end of the billing period: it
-keeps running, and billed, until then. Snapshots beyond an instance's allowance are billed too.
-The pages of billed resources say so at the top.
+The provider works with Terraform 1.5 and later and with OpenTofu 1.6 and later, with the same
+configuration. It needs an API key, described under [Authentication](#authentication).
+
+~> **Billing.** Creating an instance or a web hosting places an order billed on its billing cycle
+(monthly or longer). Destroying one requests its cancellation at the end of the billing period: it
+keeps running, and billed, until then. A domain is registered for a year and cannot be cancelled.
+A GPU is billed by the hour while it is attached, backups need the instance's paid backup option,
+and snapshots beyond an instance's allowance are billed too. The pages of billed resources say so
+at the top.
 
 ## Authentication
 
@@ -63,9 +70,12 @@ A complete stack — two instances behind a firewall, a DNS zone and its records
 ## Importing
 
 Resources import from `<organization_id>/<project_id>/<id>`, or from the bare `<id>` when the
-provider knows the organization and project; child objects (a DNS record, a snapshot or the
-reverse DNS of an instance's address) from `<organization_id>/<project_id>/<parent_id>/<id>` or
-`<parent_id>/<id>`. A firewall is the rule set of one instance, so it imports from the
+provider knows the organization and project; child objects (a DNS record, a snapshot, a backup,
+a GPU attachment, the reverse DNS of an instance's address, or anything inside a web hosting) from
+`<organization_id>/<project_id>/<parent_id>/<id>` or `<parent_id>/<id>`, where the `<id>` of an
+object inside a web hosting is usually its name (a database, a mailbox address, a domain); cron
+jobs, WordPress sites, redirects and database privileges have their own format. Each resource
+page gives its exact import ID. A firewall is the rule set of one instance, so it imports from the
 instance's ID: `<organization_id>/<project_id>/<instance_id>` or `<instance_id>`.
 
 {{ .SchemaMarkdown | trimspace }}

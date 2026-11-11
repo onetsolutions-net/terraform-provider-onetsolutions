@@ -1,5 +1,5 @@
 // Package provider defines the onetsolutions provider: its settings, the client it builds and
-// the registry of every resource and data source.
+// the registry of every resource, data source and action.
 package provider
 
 import (
@@ -13,6 +13,7 @@ import (
 	"time"
 
 	"github.com/hashicorp/terraform-plugin-framework-validators/int64validator"
+	"github.com/hashicorp/terraform-plugin-framework/action"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/provider"
@@ -57,7 +58,10 @@ type onetsolutionsProvider struct {
 	options options
 }
 
-var _ provider.Provider = (*onetsolutionsProvider)(nil)
+var (
+	_ provider.Provider            = (*onetsolutionsProvider)(nil)
+	_ provider.ProviderWithActions = (*onetsolutionsProvider)(nil)
+)
 
 // New returns the provider factory providerserver serves.
 func New(version string, opts ...Option) func() provider.Provider {
@@ -85,8 +89,8 @@ func (p *onetsolutionsProvider) Metadata(_ context.Context, _ provider.MetadataR
 
 func (p *onetsolutionsProvider) Schema(_ context.Context, _ provider.SchemaRequest, resp *provider.SchemaResponse) {
 	resp.Schema = schema.Schema{
-		MarkdownDescription: "The OnetSolutions provider manages compute, network and DNS resources through the " +
-			"OnetSolutions public API. Every setting can also come from an environment variable.",
+		MarkdownDescription: "Manages OnetSolutions compute instances, private networks, DNS and domains. Every " +
+			"setting can also come from an environment variable.",
 		Attributes: map[string]schema.Attribute{
 			"api_key": schema.StringAttribute{
 				Optional:  true,
@@ -142,7 +146,7 @@ func (p *onetsolutionsProvider) Configure(ctx context.Context, req provider.Conf
 			"The provider settings %s depend on values known only after apply, so the provider cannot call "+
 				"the API during this plan. Apply the resources they depend on first (terraform apply -target=…).",
 			strings.Join(unknown, ", "))}
-		resp.ResourceData, resp.DataSourceData = data, data
+		resp.ResourceData, resp.DataSourceData, resp.ActionData = data, data, data
 		return
 	}
 
@@ -192,7 +196,7 @@ func (p *onetsolutionsProvider) Configure(ctx context.Context, req provider.Conf
 		DefaultProjectID:      project,
 		Waiter:                p.options.waiter,
 	}
-	resp.ResourceData, resp.DataSourceData = data, data
+	resp.ResourceData, resp.DataSourceData, resp.ActionData = data, data, data
 }
 
 func (p *onetsolutionsProvider) Resources(context.Context) []func() resource.Resource {
@@ -201,6 +205,11 @@ func (p *onetsolutionsProvider) Resources(context.Context) []func() resource.Res
 
 func (p *onetsolutionsProvider) DataSources(context.Context) []func() datasource.DataSource {
 	return allDataSources()
+}
+
+// Actions are invoked by Terraform 1.14 and later; other clients ignore them.
+func (p *onetsolutionsProvider) Actions(context.Context) []func() action.Action {
+	return allActions()
 }
 
 func unknownSettings(config providerModel) []string {

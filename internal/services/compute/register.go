@@ -10,6 +10,7 @@ import (
 func Resources() []func() resource.Resource {
 	return []func() resource.Resource{
 		NewInstanceResource,
+		NewInstanceGPUResource,
 	}
 }
 
@@ -17,5 +18,6 @@ func Resources() []func() resource.Resource {
 func DataSources() []func() datasource.DataSource {
 	return []func() datasource.DataSource{
 		NewInstanceDataSource,
+		NewInstanceAvailableGPUsDataSource,
 	}
 }

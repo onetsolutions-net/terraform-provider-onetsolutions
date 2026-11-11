@@ -133,7 +133,7 @@ type HostingPlanPricing struct {
 	IsDefault       bool   `json:"is_default"`
 }
 
-// WebHosting is the WebHosting schema, reduced to what the data source exposes.
+// WebHosting is the WebHosting schema, reduced to what the provider reads.
 type WebHosting struct {
 	ID               string             `json:"id"`
 	Domain           string             `json:"domain"`
@@ -152,6 +152,8 @@ type WebHosting struct {
 	NextBillingDate  *string            `json:"next_billing_date"`
 	IsActive         bool               `json:"is_active"`
 	Created          string             `json:"created"`
+
+	CancellationRequestedAt *string `json:"cancellation_requested_at"`
 }
 
 // WebHostingPlanRef is the plan embedded in a web hosting.

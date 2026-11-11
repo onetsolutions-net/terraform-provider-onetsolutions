@@ -2,7 +2,8 @@
 
 # OnetSolutions Terraform Provider
 
-Manage your OnetSolutions compute instances, networks and DNS as code, with Terraform or OpenTofu.
+Manage your OnetSolutions compute instances, networks, DNS, domains and web hostings as code, with
+Terraform or OpenTofu.
 
 [![Terraform Registry](https://img.shields.io/badge/terraform-registry-7B42BC?logo=terraform)](https://registry.terraform.io/providers/onetsolutions-net/onetsolutions/latest)
 [![Release](https://img.shields.io/github/v/release/onetsolutions-net/terraform-provider-onetsolutions)](https://github.com/onetsolutions-net/terraform-provider-onetsolutions/releases)
@@ -67,19 +68,32 @@ terraform init && terraform apply     # or: tofu init && tofu apply
 a single project. Otherwise set them on the provider, or on each resource.
 
 > [!IMPORTANT]
-> **Instances are billed.** Creating an `onetsolutions_instance` places an order on its billing
-> cycle (monthly or longer). Destroying it requests its cancellation at the **end of the billing
-> period**: it keeps running, and billed, until then. The plan warns you before either happens.
+> **Some resources are billed.** Creating an `onetsolutions_instance` or an
+> `onetsolutions_web_hosting` places an order on its billing cycle (monthly or longer); destroying
+> it requests its cancellation at the **end of the billing period**: it keeps running, and billed,
+> until then. An `onetsolutions_domain` is registered for a year and cannot be cancelled. A GPU is
+> billed by the hour while it is attached, and backups need the instance's paid backup option. The
+> plan warns you before anything is ordered or cancelled.
 
 ## What you can manage
 
 | Area | Resources | Data sources |
 |---|---|---|
-| **Compute** | `instance`, `instance_snapshot` | `instance`, `instance_size(s)`, `image(s)` |
-| **Network** | `vpc`, `instance_firewall`, `instance_ip_reverse_dns` | `vpc` |
+| **Compute** | `instance` (with `ipv6_enabled` for a public IPv6 address), `instance_snapshot`, `instance_gpu`, `instance_backup` | `instance`, `instance_size(s)`, `image(s)`, `control_panels`, `instance_available_gpus`, `instance_backups` |
+| **Network** | `vpc`, `instance_firewall`, `instance_ip_reverse_dns` | `vpc`, `vpc_ip_allocations` |
 | **Access** | `ssh_key` | `ssh_key`, `organization(s)`, `project(s)` |
-| **DNS & domains** | `dns_zone`, `dns_record`, `dns_zone_dnssec`, `domain_settings` | `dns_zone`, `domain` |
-| **Web hosting** | — | `web_hosting`, `hosting_plans`, `control_panels` |
+| **DNS & domains** | `domain` (registration), `domain_settings`, `dns_zone`, `dns_record`, `dns_zone_dnssec` | `domain`, `domain_availability`, `tlds`, `dns_zone` |
+| **Web hosting** | `web_hosting`, `hosting_php_version`, `hosting_wordpress`, `hosting_database`, `hosting_database_user`, `hosting_database_privileges`, `hosting_email_account`, `hosting_ftp_account`, `hosting_cron_job`, `hosting_subdomain`, `hosting_addon_domain`, `hosting_redirect` | `web_hosting`, `hosting_plans`, `hosting_php_versions`, `hosting_databases`, `hosting_database_users`, `hosting_email_accounts`, `hosting_ftp_accounts`, `hosting_cron_jobs`, `hosting_subdomains`, `hosting_addon_domains`, `hosting_redirects` |
+
+| Action | What it does |
+|---|---|
+| `instance_reboot`, `instance_reset` | restart an instance, gracefully or by a hard reset |
+| `instance_reinstall` | reinstall an instance from an image, erasing its system disk and snapshots |
+| `instance_backup_restore` | restore an instance from one of its backups |
+
+Actions run only when invoked (`terraform apply -invoke=action.onetsolutions_instance_reboot.<name>`)
+or from a resource's `action_trigger` block. They need Terraform 1.14 or later; OpenTofu does not
+run actions, and everything else works with it.
 
 Every name takes the `onetsolutions_` prefix. Each one has its page, with examples and import
 instructions, in the [documentation](https://registry.terraform.io/providers/onetsolutions-net/onetsolutions/latest/docs).

@@ -3,12 +3,12 @@
 page_title: "onetsolutions_instance Resource - OnetSolutions"
 subcategory: "Compute"
 description: |-
-  Manages an OnetSolutions compute instance. Creating one places a billed order.
+  Manages an OnetSolutions compute instance, a billed order on its billing cycle.
 ---
 
 # onetsolutions_instance (Resource)
 
-Manages an OnetSolutions compute instance. Creating one places a billed order.
+Manages an OnetSolutions compute instance, a billed order on its billing cycle.
 
 ~> **Billing.** Creating this resource **places an order**: the instance is billed on its
 `billing_cycle` (monthly or longer) from the moment it is created, with the add-ons of
@@ -31,6 +31,11 @@ applied once it is installed. `size_id` changes in place through a resize order,
 `billing_cycle` if it changes too (the cycle can only change with a new size, to a longer cycle).
 A resize needs the instance stopped: it is refused on a running instance unless
 `allow_stopping_for_update` is true. Only `image_id` replaces the instance.
+
+`ipv6_enabled = true` gives the instance a public IPv6 address (`primary_ipv6`), at no cost: on a
+new instance once it is installed, otherwise in place. The operating system picks the address up at
+its next reboot. IPv6 cannot be disabled: `false` on an instance that has it, including one enabled
+in the console, is refused at plan time; leave the attribute unset to follow the instance.
 
 ## Create-only inputs
 
@@ -123,6 +128,9 @@ resource "onetsolutions_instance" "web" {
   vpc_id        = onetsolutions_vpc.private.id
   tags          = ["web", "production"]
 
+  # Public IPv6, at no cost. Once enabled it cannot be disabled.
+  ipv6_enabled = true
+
   # Applied at installation only.
   ssh_key_ids = [onetsolutions_ssh_key.admin.id]
 
@@ -141,6 +149,10 @@ resource "onetsolutions_instance" "web" {
 
 output "web_ipv4" {
   value = onetsolutions_instance.web.primary_ipv4
+}
+
+output "web_ipv6" {
+  value = onetsolutions_instance.web.primary_ipv6
 }
 ```
 
@@ -165,6 +177,7 @@ output "web_ipv4" {
 - `control_panel` (String) The slug or UUID of a control panel to install after creation (see `onetsolutions_control_panels`). Applied when the instance is installed only: a later change is stored in the state with a plan-time warning and takes effect only on a reinstall or a new instance; it never replaces the instance.
 - `deletion_protection` (Boolean) Whether destroying (or replacing) the instance is refused. Defaults to `false`. Set it to `false` and apply before destroying a protected instance.
 - `install_management_key` (Boolean) Whether the OnetSolutions support SSH key is installed. Support and the console's tools (such as password reset) need it. Defaults to `true`. Applied when the instance is installed only: a later change is stored in the state with a plan-time warning and takes effect only on a reinstall or a new instance; it never replaces the instance.
+- `ipv6_enabled` (Boolean) Whether the instance has public IPv6, at no cost. `true` enables it (on a new instance, once installed); the operating system picks the address up at its next reboot. IPv6 cannot be disabled: `false` on an instance that has it is refused at plan time. When unset, it follows the instance.
 - `one_click_app` (Block List) A One Click App installed with the instance; repeat the block for several. Applied when the instance is installed only: a later change is stored in the state with a plan-time warning and takes effect only on a reinstall or a new instance; it never replaces the instance. (see [below for nested schema](#nestedblock--one_click_app))
 - `organization_id` (String) The organization the object belongs to. Defaults to the provider's `organization_id` when the object is created; changing it explicitly recreates the object.
 - `project_id` (String) The project the object belongs to. Defaults to the provider's `project_id` when the object is created; changing it explicitly recreates the object.

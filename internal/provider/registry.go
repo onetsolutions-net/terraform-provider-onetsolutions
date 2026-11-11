@@ -3,14 +3,17 @@ package provider
 import (
 	"slices"
 
+	"github.com/hashicorp/terraform-plugin-framework/action"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 
 	"github.com/onetsolutions-net/terraform-provider-onetsolutions/internal/services/account"
+	"github.com/onetsolutions-net/terraform-provider-onetsolutions/internal/services/backup"
 	"github.com/onetsolutions-net/terraform-provider-onetsolutions/internal/services/base"
 	"github.com/onetsolutions-net/terraform-provider-onetsolutions/internal/services/catalog"
 	"github.com/onetsolutions-net/terraform-provider-onetsolutions/internal/services/compute"
 	"github.com/onetsolutions-net/terraform-provider-onetsolutions/internal/services/dns"
+	"github.com/onetsolutions-net/terraform-provider-onetsolutions/internal/services/hosting"
 	"github.com/onetsolutions-net/terraform-provider-onetsolutions/internal/services/network"
 )
 
@@ -24,6 +27,8 @@ func allResources() []func() resource.Resource {
 		compute.Resources(),
 		network.Resources(),
 		dns.Resources(),
+		backup.Resources(),
+		hosting.Resources(),
 	)
 }
 
@@ -36,5 +41,14 @@ func allDataSources() []func() datasource.DataSource {
 		compute.DataSources(),
 		network.DataSources(),
 		dns.DataSources(),
+		backup.DataSources(),
+		hosting.DataSources(),
+	)
+}
+
+// allActions aggregates the actions of every area package.
+func allActions() []func() action.Action {
+	return slices.Concat(
+		backup.Actions(),
 	)
 }

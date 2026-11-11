@@ -3,8 +3,9 @@
 // injection, and Seed helpers so a test can create objects owned by another area.
 //
 // Each area registers its routes in its own file (account.go, base.go, catalog.go, compute.go,
-// network.go, dns.go) through Server.handle, which refuses any route that is not an operation
-// of schema/openapi.json or of the documented allow-list.
+// network.go, dns.go, backup.go, domain_order.go, hosting.go, …) through Server.handle, which
+// refuses any route that is not an operation of schema/openapi.json or of the documented
+// allow-list.
 package fakeapi
 
 import (
@@ -51,6 +52,9 @@ type Server struct {
 	// API never serves it, but checks the power actions against it.
 	powerStatus map[string]string
 	syncCatchUp map[string]int
+
+	domainOrders *domainOrders
+	hosting      hostingState
 }
 
 // Option configures New.
@@ -130,6 +134,11 @@ func New(t testing.TB, opts ...Option) *Server {
 	registerCompute(s)
 	registerNetwork(s)
 	registerDNS(s)
+	registerBackup(s)
+	registerDomainOrders(s)
+	registerHosting(s)
+	registerHostingMailDB(s)
+	registerHostingWeb(s)
 	s.mux.HandleFunc("/", s.notImplemented)
 
 	s.http = httptest.NewServer(s.mux)

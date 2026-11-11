@@ -32,6 +32,11 @@ applied once it is installed. `size_id` changes in place through a resize order,
 A resize needs the instance stopped: it is refused on a running instance unless
 `allow_stopping_for_update` is true. Only `image_id` replaces the instance.
 
+`ipv6_enabled = true` gives the instance a public IPv6 address (`primary_ipv6`), at no cost: on a
+new instance once it is installed, otherwise in place. The operating system picks the address up at
+its next reboot. IPv6 cannot be disabled: `false` on an instance that has it, including one enabled
+in the console, is refused at plan time; leave the attribute unset to follow the instance.
+
 ## Create-only inputs
 
 These inputs are applied when the instance is installed. Changing one after creation **does not

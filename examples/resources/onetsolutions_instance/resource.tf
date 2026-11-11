@@ -28,6 +28,9 @@ resource "onetsolutions_instance" "web" {
   vpc_id        = onetsolutions_vpc.private.id
   tags          = ["web", "production"]
 
+  # Public IPv6, at no cost. Once enabled it cannot be disabled.
+  ipv6_enabled = true
+
   # Applied at installation only.
   ssh_key_ids = [onetsolutions_ssh_key.admin.id]
 
@@ -46,4 +49,8 @@ resource "onetsolutions_instance" "web" {
 
 output "web_ipv4" {
   value = onetsolutions_instance.web.primary_ipv4
+}
+
+output "web_ipv6" {
+  value = onetsolutions_instance.web.primary_ipv6
 }

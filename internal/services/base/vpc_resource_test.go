@@ -136,7 +136,7 @@ func TestVPCResource_deleteTimesOutWhileInstancesAttached(t *testing.T) {
 	t.Parallel()
 	f := acctest.NewFake(t)
 	timeouts := `  timeouts {
-    delete = "500ms"
+    delete = "2s"
   }`
 	config := acctest.Config(f, vpcConfig("tf-acc-attached", "10.50.0.0/16", timeouts))
 	var instanceID string

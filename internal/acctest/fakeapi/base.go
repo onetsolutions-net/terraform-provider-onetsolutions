@@ -47,6 +47,7 @@ func registerBase(s *Server) {
 	}))
 	s.handle(http.MethodPatch, vpcsTemplate+"/{id}", s.withScope(s.updateVPC))
 	s.handle(http.MethodDelete, vpcsTemplate+"/{id}", s.withScope(s.deleteVPC))
+	registerVPCIPAllocations(s)
 }
 
 func (s *Server) createSSHKey(w http.ResponseWriter, r *http.Request, scope Scope) {

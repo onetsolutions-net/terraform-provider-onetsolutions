@@ -1,5 +1,5 @@
-// Package dns holds the DNS zones, their records and DNSSEC signing, and the settings of the
-// domains registered in a project.
+// Package dns holds the DNS zones, their records and DNSSEC signing, the registration of domains
+// and their settings, and the domain catalog.
 package dns
 
 import (
@@ -14,6 +14,7 @@ func Resources() []func() resource.Resource {
 		NewRecordResource,
 		NewDNSSECResource,
 		NewDomainSettingsResource,
+		NewDomainResource,
 	}
 }
 
@@ -22,5 +23,7 @@ func DataSources() []func() datasource.DataSource {
 	return []func() datasource.DataSource{
 		NewZoneDataSource,
 		NewDomainDataSource,
+		NewDomainAvailabilityDataSource,
+		NewTLDsDataSource,
 	}
 }
